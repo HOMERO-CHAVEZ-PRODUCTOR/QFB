@@ -51,10 +51,28 @@ body::before{
     z-index:-3;
     pointer-events:none;
     background:
-        radial-gradient(circle at 0% 38%, transparent 0 130px, rgba(124,61,47,.12) 132px 154px, transparent 156px),
-        radial-gradient(circle at 100% 64%, transparent 0 142px, rgba(124,61,47,.10) 144px 166px, transparent 168px),
-        radial-gradient(circle at 88% 11%, rgba(255,255,230,.58) 0 82px, transparent 84px),
-        radial-gradient(circle at 14% 83%, rgba(255,255,230,.5) 0 82px, transparent 84px);
+        radial-gradient(
+            circle at 0% 38%,
+            transparent 0 130px,
+            rgba(124,61,47,.10) 132px 154px,
+            transparent 156px
+        ),
+        radial-gradient(
+            circle at 100% 64%,
+            transparent 0 142px,
+            rgba(124,61,47,.08) 144px 166px,
+            transparent 168px
+        ),
+        radial-gradient(
+            circle at 88% 11%,
+            rgba(255,255,230,.32) 0 82px,
+            transparent 84px
+        ),
+        radial-gradient(
+            circle at 14% 83%,
+            rgba(255,255,230,.28) 0 82px,
+            transparent 84px
+        );
 }
 
 body::after{
@@ -127,10 +145,11 @@ body.opened .site{
     position:absolute;
     width:240px;
     height:240px;
-    border:22px solid rgba(124,61,47,.88);
+    border:22px solid rgba(124,61,47,.16);
     border-radius:50%;
     right:-120px;
     top:-120px;
+    pointer-events:none;
 }
 
 .opening-kicker{
@@ -236,10 +255,11 @@ section{
     position:absolute;
     width:260px;
     height:260px;
-    border:22px solid rgba(124,61,47,.88);
+    border:22px solid rgba(124,61,47,.14);
     border-radius:50%;
     left:-130px;
     bottom:-130px;
+    pointer-events:none;
 }
 
 .kicker{
