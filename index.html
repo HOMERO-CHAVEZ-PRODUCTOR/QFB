@@ -82,8 +82,16 @@ body::after{
     z-index:-2;
     pointer-events:none;
     background:
-        repeating-linear-gradient(0deg, rgba(124,61,47,.018) 0 1px, transparent 1px 6px),
-        repeating-linear-gradient(90deg, rgba(124,61,47,.014) 0 1px, transparent 1px 7px);
+        repeating-linear-gradient(
+            0deg,
+            rgba(124,61,47,.018) 0 1px,
+            transparent 1px 6px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(124,61,47,.014) 0 1px,
+            transparent 1px 7px
+        );
 }
 
 body.opened .opening-screen{
@@ -496,6 +504,17 @@ h1,h2,h3,h4{
     letter-spacing:.8px;
 }
 
+.activity small{
+    display:block;
+    margin-top:4px;
+    color:var(--muted);
+    font-size:.76rem;
+    font-weight:500;
+    text-transform:none;
+    letter-spacing:.5px;
+    line-height:1.4;
+}
+
 .menu-wrapper{
     display:grid;
     gap:22px;
@@ -744,7 +763,9 @@ footer p{
         <div class="opening-kicker">Te invitamos a celebrar</div>
         <h1>QFB</h1>
         <div class="opening-date">25 · 07 · 26</div>
-        <button class="open-btn" onclick="abrirInvitacion()">Haz click para abrir</button>
+        <button class="open-btn" onclick="abrirInvitacion()">
+            Haz click para abrir
+        </button>
     </div>
 </div>
 
@@ -752,7 +773,15 @@ footer p{
     <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music-btn" id="musicBtn" onclick="gestionarMusica()">🔇</button>
+<button
+    class="music-btn"
+    id="musicBtn"
+    type="button"
+    aria-label="Activar o pausar música"
+    onclick="gestionarMusica()"
+>
+    🔇
+</button>
 
 <div class="site">
 
@@ -776,10 +805,25 @@ footer p{
         </p>
 
         <div class="countdown">
-            <div class="count-box"><strong id="days">00</strong><span>Días</span></div>
-            <div class="count-box"><strong id="hours">00</strong><span>Horas</span></div>
-            <div class="count-box"><strong id="minutes">00</strong><span>Minutos</span></div>
-            <div class="count-box"><strong id="seconds">00</strong><span>Segundos</span></div>
+            <div class="count-box">
+                <strong id="days">00</strong>
+                <span>Días</span>
+            </div>
+
+            <div class="count-box">
+                <strong id="hours">00</strong>
+                <span>Horas</span>
+            </div>
+
+            <div class="count-box">
+                <strong id="minutes">00</strong>
+                <span>Minutos</span>
+            </div>
+
+            <div class="count-box">
+                <strong id="seconds">00</strong>
+                <span>Segundos</span>
+            </div>
         </div>
     </div>
 </section>
@@ -801,11 +845,20 @@ footer p{
                         <path d="M36 28h6"/>
                     </svg>
                 </div>
+
                 <div class="location-info">
                     <h3>Condado del Valle</h3>
                     <div class="hour">18:00 HRS</div>
                     <p>Recepción de graduación</p>
-                    <a class="btn" href="https://maps.app.goo.gl/pT1EnJsZCre4e7v89" target="_blank">Ver ubicación</a>
+
+                    <a
+                        class="btn"
+                        href="https://maps.app.goo.gl/pT1EnJsZCre4e7v89"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Ver ubicación
+                    </a>
                 </div>
             </article>
         </div>
@@ -818,59 +871,91 @@ footer p{
         <div class="ornament"></div>
 
         <div class="panel timeline">
+
             <div class="time-row">
                 <div class="time">18:00 HRS</div>
-                <div class="activity">Recepción / Violin</div>
+                <div class="activity">Recepción / Violín</div>
             </div>
+
             <div class="time-row">
                 <div class="time">19:00 HRS</div>
                 <div class="activity">Cena / Saxofón</div>
             </div>
-            </div>
+
             <div class="time-row">
                 <div class="time">20:05 HRS</div>
                 <div class="activity">Palabras</div>
             </div>
-        </div>
+
             <div class="time-row">
                 <div class="time">20:10 HRS</div>
                 <div class="activity">Brindis</div>
             </div>
+
             <div class="time-row">
                 <div class="time">20:15 HRS</div>
                 <div class="activity">Se abre pista</div>
             </div>
-         </div>
+
             <div class="time-row">
                 <div class="time">20:30 HRS</div>
                 <div class="activity">Cabina de fotos</div>
             </div>
+
             <div class="time-row">
                 <div class="time">21:00 HRS</div>
-                <div class="activity">Carrito de shots / Personaje concepto</div>
+                <div class="activity">Carrito de shots</div>
             </div>
-    </div>
+
+            <div class="time-row">
+                <div class="time">21:00 HRS</div>
+                <div class="activity">
+                    Personaje concepto
+                    <small>Dr. Simi y puerco</small>
+                </div>
+            </div>
+
             <div class="time-row">
                 <div class="time">23:00 HRS</div>
-                <div class="activity">Tornafiesta / Banda</div>
+                <div class="activity">
+                    Tornafiesta
+                    <small>Tacos</small>
+                </div>
             </div>
+
+            <div class="time-row">
+                <div class="time">23:00 HRS</div>
+                <div class="activity">Banda</div>
+            </div>
+
             <div class="time-row">
                 <div class="time">23:00 - 02:00 HRS</div>
-                <div class="activity">After party / Barra de bebidas</div>
+                <div class="activity">After party</div>
             </div>
-    </div>
+
             <div class="time-row">
-                <div class="time">01:00 HRS</div>
-                <div class="activity">Sorpresa animada</div>
+                <div class="time">23:00 - 02:00 HRS</div>
+                <div class="activity">Barra de bebidas</div>
             </div>
+
             <div class="time-row">
-                <div class="time">02:00 HRS</div>
-                <div class="activity">Fin</div>
+                <div class="time">01:00 AM</div>
+                <div class="activity">
+                    Sorpresa animada
+                    <small>Sopas</small>
+                </div>
             </div>
+
             <div class="time-row">
-                <div class="time">02:00 - 03:00 HRS</div>
+                <div class="time">02:00 AM</div>
+                <div class="activity">Fin del evento</div>
+            </div>
+
+            <div class="time-row">
+                <div class="time">02:00 - 03:00 AM</div>
                 <div class="activity">Desalojo</div>
             </div>
+
         </div>
     </div>
 </section>
@@ -884,6 +969,7 @@ footer p{
 
             <article class="menu-card">
                 <h3>Menú Principal</h3>
+
                 <div class="menu-list">
                     <div class="menu-item">
                         <h4>Primer tiempo</h4>
@@ -907,11 +993,13 @@ footer p{
 
             <article class="menu-card">
                 <h3>Menú Vegano y Vegetariano</h3>
+
                 <div class="menu-list">
                     <div class="menu-item">
                         <h4>Opción especial</h4>
                         <p>
-                            Portobellos asados en salsa de vino tinto con vegetales rostizados.
+                            Portobellos asados en salsa de vino tinto con vegetales
+                            rostizados.
                         </p>
                     </div>
                 </div>
@@ -919,6 +1007,7 @@ footer p{
 
             <article class="menu-card">
                 <h3>Menú Infantil</h3>
+
                 <div class="menu-list">
                     <div class="menu-item">
                         <h4>Primer tiempo</h4>
@@ -947,53 +1036,77 @@ footer p{
         <div class="ornament"></div>
 
         <div class="recommendations-grid">
+
             <article class="recommendation-card">
                 <div class="recommendation-icon">☂</div>
+
                 <div class="recommendation-text">
                     <h4>Clima y protección</h4>
-                    <p>Sugerimos tomar precauciones e ir abrigados ante el clima del lugar.</p>
+                    <p>
+                        Sugerimos tomar precauciones e ir abrigados ante el clima del lugar.
+                    </p>
                 </div>
             </article>
 
             <article class="recommendation-card">
                 <div class="recommendation-icon">⌂</div>
+
                 <div class="recommendation-text">
                     <h4>Acceso único</h4>
-                    <p>Considere que el recinto cuenta con un solo acceso habilitado para la entrada.</p>
+                    <p>
+                        Considere que el recinto cuenta con un solo acceso habilitado
+                        para la entrada.
+                    </p>
                 </div>
             </article>
 
             <article class="recommendation-card">
                 <div class="recommendation-icon">⌁</div>
+
                 <div class="recommendation-text">
                     <h4>Valet parking</h4>
-                    <p>Servicio externo a HC, con costo adicional por auto.</p>
+                    <p>
+                        Servicio externo a HC, con costo adicional por auto.
+                    </p>
                 </div>
             </article>
 
             <article class="recommendation-card">
                 <div class="recommendation-icon">♨</div>
+
                 <div class="recommendation-text">
                     <h4>Áreas de fumar</h4>
-                    <p>El consumo de tabaco está restringido exclusivamente a las áreas exteriores.</p>
+                    <p>
+                        El consumo de tabaco está restringido exclusivamente
+                        a las áreas exteriores.
+                    </p>
                 </div>
             </article>
 
             <article class="recommendation-card">
                 <div class="recommendation-icon">✦</div>
+
                 <div class="recommendation-text">
                     <h4>Menús especiales</h4>
-                    <p>Si requiere menú vegano, vegetariano o por alergias, solicítelo en la selección de mesas.</p>
+                    <p>
+                        Si requiere menú vegano, vegetariano o por alergias,
+                        solicítelo en la selección de mesas.
+                    </p>
                 </div>
             </article>
 
             <article class="recommendation-card">
                 <div class="recommendation-icon">⌑</div>
+
                 <div class="recommendation-text">
                     <h4>Guardarropa</h4>
-                    <p>No hay servicio de guardarropa. El kit de graduado será entregado en la entrada.</p>
+                    <p>
+                        No hay servicio de guardarropa. El kit de graduado será
+                        entregado en la entrada.
+                    </p>
                 </div>
             </article>
+
         </div>
     </div>
 </section>
@@ -1014,20 +1127,24 @@ const musicBtn = document.getElementById('musicBtn');
 function abrirInvitacion(){
     document.body.classList.add('opened');
 
-    audio.play().then(() => {
-        musicBtn.innerHTML = "🔊";
-    }).catch(() => {
-        musicBtn.innerHTML = "🔇";
-    });
+    audio.play()
+        .then(() => {
+            musicBtn.innerHTML = "🔊";
+        })
+        .catch(() => {
+            musicBtn.innerHTML = "🔇";
+        });
 }
 
 function gestionarMusica(){
     if(audio.paused){
-        audio.play().then(() => {
-            musicBtn.innerHTML = "🔊";
-        }).catch(() => {
-            musicBtn.innerHTML = "🔇";
-        });
+        audio.play()
+            .then(() => {
+                musicBtn.innerHTML = "🔊";
+            })
+            .catch(() => {
+                musicBtn.innerHTML = "🔇";
+            });
     }else{
         audio.pause();
         musicBtn.innerHTML = "🔇";
@@ -1037,7 +1154,7 @@ function gestionarMusica(){
 const reveals = document.querySelectorAll('.reveal');
 
 const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
         if(entry.isIntersecting){
             entry.target.classList.add('active');
         }
@@ -1046,9 +1163,11 @@ const revealObserver = new IntersectionObserver((entries) => {
     threshold:.16
 });
 
-reveals.forEach(el => revealObserver.observe(el));
+reveals.forEach((element) => {
+    revealObserver.observe(element);
+});
 
-const eventDate = new Date("July 25, 2026 20:00:00").getTime();
+const eventDate = new Date("July 25, 2026 18:00:00").getTime();
 
 function updateCountdown(){
     const now = new Date().getTime();
@@ -1067,10 +1186,17 @@ function updateCountdown(){
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
 
-    document.getElementById("days").textContent = String(days).padStart(2,"0");
-    document.getElementById("hours").textContent = String(hours).padStart(2,"0");
-    document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
-    document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
+    document.getElementById("days").textContent =
+        String(days).padStart(2,"0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2,"0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2,"0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2,"0");
 }
 
 setInterval(updateCountdown,1000);
